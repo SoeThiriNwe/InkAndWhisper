@@ -1,15 +1,13 @@
-import { Box, Drawer, IconButton } from "@mui/material";
+import { Box, Divider, Drawer, IconButton, ListItemButton, Typography } from "@mui/material";
 import ViewListRoundedIcon from '@mui/icons-material/ViewListRounded';
 import { useState } from "react";
+import AddRoundedIcon from '@mui/icons-material/AddRounded';
+import Drawerc from "@/component/drawer";
 
 const backOffice = ()=>{
-    const[drawerOpen,setDrawerOpen] = useState(false);
     return (
         <Box>
-            <IconButton onClick={()=>setDrawerOpen(true)}><ViewListRoundedIcon sx={{fontSize : "40px",color : "#1d1235ff"}}/></IconButton>
-            <Drawer open={drawerOpen} onClose={()=>{setDrawerOpen(false)}}>
-ddfjdklfjdlfjdklfjl
-             </Drawer>
+            <Drawerc/>
         </Box>
     )
 }
