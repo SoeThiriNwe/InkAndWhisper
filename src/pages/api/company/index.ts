@@ -9,9 +9,7 @@ export default async function handler(
   const method = req.method;
   if (method==="POST"){
       const body = req.body;
-      console.log(body)
-    await prisma.company.create({data : {email : body.email,name : body.companyName}})
-    
+    const createdCompanyFromApi =   await prisma.company.create({data : {email : body.email,name : body.companyNameParameter}})
+    res.status(200).json(createdCompanyFromApi);
   }
-  res.status(200).json({ name: "John Doe" });
 }

@@ -3,10 +3,14 @@ import ViewListRoundedIcon from '@mui/icons-material/ViewListRounded';
 import { useState } from "react";
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import NewCategories from "./newCategories";
+import { useAppSelector } from "@/store/hook";
 
 const Drawerc = ()=>{
         const[drawerOpen,setDrawerOpen] = useState(false);
         const[newCategoriesOpen,setNewCategoriesOpen] = useState(false);
+        // const selector = useAppSelector((store)=>{return store.category.items})
+        const categoriesArrayFormStore = useAppSelector((store)=> store.category.items)//we can remove return and {} bcz one line
+
     return (
         <Box>
 
@@ -31,6 +35,11 @@ const Drawerc = ()=>{
                     </ListItemButton>
                 </Box>
                 <Divider variant="middle" sx={{border : " 1.3px solid #faf8ffff"}} />
+
+                {/* {  [1 , 2, 3].map((num) => { return <Typography sx={{ color : "white"}}>{num}</Typography>})  } */}
+
+                { categoriesArrayFormStore.map((category)=>{return <Typography key={category.id} sx={{ color : "white"}}>{category.name}</Typography>})}
+
              </Drawer>
             <NewCategories categoriesOpen={newCategoriesOpen} categoriesClose={(setNewCategoriesOpen)} ></NewCategories>
         </Box>

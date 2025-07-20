@@ -6,7 +6,7 @@ import Drawerc from "@/component/drawer";
 
 const backOffice = ()=>{
     return (
-        <Box>
+        <Box sx={{bgcolor : "#c4d4e8ff",height : "100vh"}}>
             <Drawerc/>
         </Box>
     )

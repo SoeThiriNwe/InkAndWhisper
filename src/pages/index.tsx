@@ -6,9 +6,9 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(()=>{
-    router.push("/admin/backoffice");
+    router.push("/admin");
   },[])
-
+  
   return (
     <></>
   )

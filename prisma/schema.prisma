@@ -20,6 +20,7 @@ model Company {
   email String @unique
   Category Category[]
 }
+
 model Category {
   id      Int      @id @default(autoincrement())
   name    String
