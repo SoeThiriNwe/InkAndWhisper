@@ -46,3 +46,5 @@ model CategoryAndBookRelation {
   Category Category @relation(fields: [categoryId],references: [id])
   Book Book @relation(fields: [bookId],references: [id])
 }
+//category and book  is many to many relationship
+

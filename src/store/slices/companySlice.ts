@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { Company } from "../../../generated/prisma"
+import { setCategories } from "./categorySlice";
 
 
 // const createCompany = async () => {
@@ -32,6 +33,19 @@ export const createCompany = createAsyncThunk("CreateCompanyinSlice", async (com
         }
     } )
 
+    export const readAllDataFromCompanyId = createAsyncThunk("readData", async ( _ , thunkApi)=>{
+        try{
+            const response = await fetch("/api/company?companyId=1",{
+                method : "GET",
+            })
+            const readingData = await response.json();
+            thunkApi.dispatch(setCompany(readingData.findingCompany));
+            thunkApi.dispatch(setCategories(readingData.retreivingCategories))
+
+        }catch(err){
+
+        }
+    })
 
 interface InitialStateValueType {
     item : Company | null

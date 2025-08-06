@@ -15,7 +15,6 @@ const Drawerc = ()=>{
         <Box>
 
             <IconButton onClick={()=>setDrawerOpen(true)}><ViewListRoundedIcon sx={{fontSize : "40px",color : "#1d1235ff"}}/></IconButton>
-        
             <Drawer open={drawerOpen} onClose={()=>{setDrawerOpen(false)}} 
                 slotProps={{
                     paper : {
