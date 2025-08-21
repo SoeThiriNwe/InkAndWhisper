@@ -1,4 +1,4 @@
-import { Box, Divider, Drawer, IconButton, ListItemButton, Typography } from "@mui/material";
+import { Box, Divider, Drawer, IconButton, ListItemButton, ListItemText, Typography } from "@mui/material";
 import ViewListRoundedIcon from '@mui/icons-material/ViewListRounded';
 import { useState } from "react";
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
@@ -19,7 +19,7 @@ const Drawerc = ()=>{
                 slotProps={{
                     paper : {
                         sx : {
-                            backgroundColor : "#1d1149ff",
+                            backgroundColor : "#d5cae6f8",
                             width : "200px"
                         }
                     }
@@ -27,17 +27,28 @@ const Drawerc = ()=>{
                     
                 <Box>
                     <ListItemButton onClick={()=>{setNewCategoriesOpen(true)}} sx={{display : "flex", alignItems : "center" , justifyContent : "center",  gap: "20px"}}>
-                        <Typography sx={{fontSize : "25px",fontWeight : "bold",fontFamily : "initial",color : "#fefeffff"}} >New </Typography>
+                        <Typography sx={{fontSize : "25px",fontWeight : "bold",fontFamily : "initial",color : "#6923a1cc"}} >New </Typography>
                         <IconButton>
-                            <AddRoundedIcon sx={{color : "#faf8ffff"}}/>
+                            <AddRoundedIcon sx={{color : "#6923a1cc"}}/>
                         </IconButton>
                     </ListItemButton>
                 </Box>
-                <Divider variant="middle" sx={{border : " 1.3px solid #faf8ffff"}} />
+                <Divider variant="middle" sx={{border : " 1.3px solid #6923a1cc"}} />
 
                 {/* {  [1 , 2, 3].map((num) => { return <Typography sx={{ color : "white"}}>{num}</Typography>})  } */}
 
-                { categoriesArrayFormStore.map((category)=>{return <Typography key={category.id} sx={{ color : "white"}}>{category.name}</Typography>})}
+                <Box sx={{marginTop : "10px"}}>
+                    { categoriesArrayFormStore.map((category)=> {
+                        return  (
+                            <ListItemButton key={category.id} onClick={()=>{
+                                setDrawerOpen(false) 
+                                
+                            }}>
+                                <Typography  sx={{color : "#6923a1cc", fontSize : "20px" ,fontFamily : "initial" , fontWeight : "bold"}}> {category.name} </Typography>
+                            </ListItemButton>
+                        )
+                    })}
+                </Box>
 
              </Drawer>
             <NewCategories categoriesOpen={newCategoriesOpen} categoriesClose={(setNewCategoriesOpen)} ></NewCategories>

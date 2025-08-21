@@ -14,7 +14,7 @@ export default async function handler(
   }else if (method === "GET"){
     const q = req.query;
     const findingCompany = await prisma.company.findUnique({where: {id : Number(q.companyId)}});
-    const retreivingCategories = await prisma.category.findMany({where : {CompanyId : Number(q.companyId)}});
+    const retreivingCategories = await prisma.category.findMany({where : {CompanyId : Number(q.companyId)} , orderBy : {id : "asc"}} );
     res.status(200).json({ findingCompany ,retreivingCategories })
   } else if( method === "DELETE") {
     console.log(req.body)

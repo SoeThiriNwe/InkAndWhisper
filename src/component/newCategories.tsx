@@ -19,7 +19,7 @@ const NewCategories = ( obj : ParaType )=>{
             slotProps={{
                 paper : {
                     sx : {
-                        background : "linear-gradient(45deg, #f5c9d6ff , #b5d6f7ff, #f5c9d6ff , #e4caf5ff  )",
+                        background : "linear-gradient(45deg, #e77295ff , #b5d6f7ff, #f5c9d6ff , #e4caf5ff  )",
                         width : "300px",
                     }
                 } 

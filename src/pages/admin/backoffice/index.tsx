@@ -1,18 +1,18 @@
-import { Box, Divider, Drawer, IconButton, ListItemButton, Typography } from "@mui/material";
-import ViewListRoundedIcon from '@mui/icons-material/ViewListRounded';
+import { Box } from "@mui/material";
 import { useEffect, useState } from "react";
-import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import Drawerc from "@/component/drawer";
 import { useAppDispatch } from "@/store/hook";
 import { readAllDataFromCompanyId } from "@/store/slices/companySlice";
 
 const backOffice = ()=>{
     const dispatch = useAppDispatch();
+    const [selectedCategory, setSelectedCategory] = useState();
 
     useEffect(()=>{
         dispatch(readAllDataFromCompanyId())
         console.log("hello")
     },[])
+
 
     
     return (

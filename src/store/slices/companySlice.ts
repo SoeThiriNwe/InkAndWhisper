@@ -2,18 +2,6 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { Company } from "../../../generated/prisma"
 import { setCategories } from "./categorySlice";
 
-
-// const createCompany = async () => {
-//         await fetch("/api/company",{
-//             method : "POST",
-//             headers : {
-//                 "content-type" : "application/json"
-//             },
-//             body : JSON.stringify({companyName,email : "soem28918@gmail.com"})
-//         })
-//     }; 
-
-
 export const createCompany = createAsyncThunk("CreateCompanyinSlice", async (companyNameParameter : string,thunkApi) => {
         try{
            const response =  await fetch("/api/company",{
